@@ -2,21 +2,10 @@ const btnSearch = document.getElementById("btnSearch");
 const txtSearch = document.getElementById("txtSearch");
 const txtYear = document.getElementById("txtYear");
 const moviesDiv = document.getElementById("Movies");
-// btnSearch.addEventListener("click", () => {
-//   document.getElementById("Movies").innerHTML = "";
-//   getData(txtSearch.value);
-// });
-// btnSearch.addEventListener("click", () => {
-//   while (moviesDiv.firstChild) {
-//     moviesDiv.removeChild(moviesDiv.firstChild);
-//   }
-//   getData(txtSearch.value);
-// });
-// btnSearch.addEventListener("click", () => getData(txtSearch.value));
-const getData = async(MovieName) => {
+const getData = async(Movie) => {
 
     const resp = await fetch(
-        `http://www.omdbapi.com/?s=${MovieName}&apikey=edc1ce65`
+        `http://www.omdbapi.com/?s=${Movie}&apikey=edc1ce65`
     );
 
     const data = await resp.json();
